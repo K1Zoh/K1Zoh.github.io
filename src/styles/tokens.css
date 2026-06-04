@@ -1,0 +1,172 @@
+/* =============================================================
+   Design tokens — Cyber / Cloud identity
+   Single source of truth for color, type, space, radius, shadow, motion.
+   Dark is the default theme; [data-theme="light"] overrides the palette.
+   ============================================================= */
+
+:root {
+  color-scheme: dark;
+
+  /* ---- Brand accent (shared across themes) — cyber blue → cyan ---- */
+  --accent: #2f81f7;          /* blue */
+  --accent-2: #38bdf8;        /* cyan */
+  --accent-3: #818cf8;        /* indigo edge for gradients */
+  --accent-rgb: 47, 129, 247;
+  --accent-2-rgb: 56, 189, 248;
+  --accent-on: #ffffff;       /* text/icon on accent fill */
+  --accent-gradient: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+
+  /* ---- Semantic status ---- */
+  --success: #34d399;
+  --success-rgb: 52, 211, 153;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  /* ---- Surfaces & text (DARK — default) ---- */
+  --bg: #0a0b0d;
+  --bg-rgb: 10, 11, 13;
+  --bg-grid: rgba(255, 255, 255, 0.022);
+  --surface: #111418;
+  --surface-2: #161a1f;
+  --surface-3: #1c2128;
+  --surface-translucent: rgba(20, 24, 29, 0.72);
+  --elevated: rgba(255, 255, 255, 0.04);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(var(--accent-rgb), 0.32);
+
+  --text: #f2f5f8;
+  --text-secondary: #c5cdd8;
+  --text-muted: #97a2b0;        /* AA on --bg */
+  --text-faint: #6b7585;
+  --accent-text: #7eb0ff;       /* accent tone readable on dark */
+
+  --ring: rgba(var(--accent-rgb), 0.5);
+  --scrim: rgba(5, 6, 8, 0.62);
+
+  /* Card gradients & glows */
+  --card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.012));
+  --card-bg-hover: linear-gradient(180deg, rgba(var(--accent-rgb), 0.07), rgba(255, 255, 255, 0.015));
+  --card-inset: inset 0 1px rgba(255, 255, 255, 0.055);
+  --glow-accent: 0 24px 70px rgba(var(--accent-rgb), 0.14);
+
+  /* ---- Typography ---- */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', 'Menlo', monospace;
+
+  --text-xs: 0.75rem;     /* 12 */
+  --text-sm: 0.8125rem;   /* 13 */
+  --text-base: 0.9375rem; /* 15 */
+  --text-md: 1rem;        /* 16 */
+  --text-lg: 1.125rem;    /* 18 */
+  --text-xl: 1.375rem;    /* 22 */
+  --text-2xl: clamp(1.5rem, 1.1rem + 1.8vw, 1.9rem);
+  --text-3xl: clamp(1.9rem, 1.3rem + 2.6vw, 2.6rem);
+  --text-4xl: clamp(2.3rem, 1.4rem + 4vw, 3.4rem);
+  --text-hero: clamp(2.6rem, 1.3rem + 5.6vw, 4.6rem);
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-normal: 1.6;
+  --tracking-tight: -0.02em;
+  --tracking-tighter: -0.035em;
+  --tracking-wide: 0.14em;
+
+  /* ---- Spacing (4pt rhythm) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --section-y: clamp(3.5rem, 2rem + 6vw, 6rem);
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-2xl: 28px;
+  --radius-full: 999px;
+
+  /* ---- Shadow / elevation ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 30px 80px rgba(0, 0, 0, 0.4);
+  --shadow-card: var(--card-inset), 0 24px 60px rgba(0, 0, 0, 0.26);
+
+  /* ---- Layout ---- */
+  --container: 1160px;
+  --container-pad: clamp(1rem, 0.5rem + 2vw, 2rem);
+  --nav-h: 68px;
+
+  /* ---- Z-index scale ---- */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-nav: 40;
+  --z-overlay: 80;
+  --z-modal: 100;
+  --z-top: 1000;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 150ms;
+  --dur-base: 240ms;
+  --dur-slow: 400ms;
+}
+
+/* ---------- LIGHT THEME ---------- */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --accent: #1d6fe6;
+  --accent-rgb: 29, 111, 230;
+  --accent-2: #0891b2;
+  --accent-2-rgb: 8, 145, 178;
+  --accent-on: #ffffff;
+  --accent-gradient: linear-gradient(120deg, #1d6fe6 0%, #0ea5c4 100%);
+
+  --success: #059669;
+  --success-rgb: 5, 150, 105;
+
+  --bg: #f6f8fb;
+  --bg-rgb: 246, 248, 251;
+  --bg-grid: rgba(15, 23, 42, 0.04);
+  --surface: #ffffff;
+  --surface-2: #f1f4f9;
+  --surface-3: #e9eef5;
+  --surface-translucent: rgba(255, 255, 255, 0.78);
+  --elevated: rgba(15, 23, 42, 0.03);
+
+  --border: rgba(15, 23, 42, 0.1);
+  --border-strong: rgba(15, 23, 42, 0.16);
+  --border-accent: rgba(var(--accent-rgb), 0.3);
+
+  --text: #0b1220;
+  --text-secondary: #303a4d;
+  --text-muted: #51607a;        /* AA on light --bg */
+  --text-faint: #7a879c;
+  --accent-text: #1559bd;
+
+  --ring: rgba(var(--accent-rgb), 0.5);
+  --scrim: rgba(15, 23, 42, 0.4);
+
+  --card-bg: linear-gradient(180deg, #ffffff, #fbfcfe);
+  --card-bg-hover: linear-gradient(180deg, rgba(var(--accent-rgb), 0.05), #ffffff);
+  --card-inset: inset 0 1px rgba(255, 255, 255, 0.9);
+  --glow-accent: 0 20px 50px rgba(var(--accent-rgb), 0.12);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.14);
+  --shadow-card: var(--card-inset), 0 16px 40px rgba(15, 23, 42, 0.08);
+}
