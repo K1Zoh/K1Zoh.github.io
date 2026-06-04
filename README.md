@@ -1,39 +1,51 @@
-# Matthieu CEIFAO — CV Portfolio
+# k1zoh.github.io
 
-Premier jet local du portfolio GitHub Pages de Matthieu CEIFAO / KiZoh.
+Personal portfolio and web CV of **Matthieu Ceifao** (KiZoh), junior Cloud Cybersecurity Engineer (Azure / Microsoft 365 / IAM).
 
-Objectif : présenter un profil junior BAC+5 cyber cloud orienté Azure, Microsoft 365, IAM, sécurité cloud, infrastructure et automatisation, avec des projets privés décrits comme études de cas sans exposer de dépôts sensibles.
+**Live:** https://k1zoh.github.io
+
+![Portfolio preview](./public/og.png)
+
+## About
+
+A single-page, bilingual (FR / EN) portfolio built as a front-end proof of work. No tracker, no backend, fully static, deployed on GitHub Pages.
+
+## Features
+
+- Bilingual content (FR / EN) with a language toggle
+- Dark and light themes via CSS design tokens, no flash on load
+- Animated cyber-network canvas hero and a neofetch-style system card
+- Scroll-spy navigation with a mobile menu
+- One-click "Download CV" (clean print-to-PDF layout)
+- Accessibility: honours `prefers-reduced-motion`, visible focus states, semantic structure
+- `Person` JSON-LD structured data for SEO
 
 ## Stack
 
-- Vite
-- React
-- TypeScript
-- Tailwind CSS runtime via CSS custom design system
-- Framer Motion
-- Lucide React
+React 19 · TypeScript · Vite · Framer Motion · Lucide · plain CSS (custom properties). No UI framework.
 
-## Commandes
+## Run locally
 
 ```bash
 npm install
-npm run dev
-npm run build
+npm run dev      # http://localhost:5173
+npm run build    # production build to /dist
 npm run lint
 ```
 
-## Confidentialité
+## Structure
 
-Avant publication publique :
+```
+src/
+  components/   layout, hero, sections, ui primitives
+  context/      theme + language providers
+  hooks/        reduced-motion, scroll-spy
+  i18n/         FR/EN content (single source of truth)
+  styles/       tokens, base, components, print
+```
 
-- relire toutes les expériences ;
-- vérifier qu’aucun secret, chemin local, IP privée ou détail interne sensible n’est exposé ;
-- valider les contacts publics ;
-- confirmer que les projets privés peuvent être décrits en case studies.
+## Notes
 
-## Déploiement prévu
+Internal figures from past roles are intentionally kept vague (no confidential data). Built with help from Claude Code.
 
-Repo cible recommandé : `K1Zoh.github.io`
-URL cible : `https://k1zoh.github.io/`
-
-Le workflow GitHub Pages est préparé mais rien n’est publié sans validation humaine.
+© Matthieu Ceifao
